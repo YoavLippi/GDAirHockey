@@ -53,14 +53,6 @@ public class PuckMovement : MonoBehaviour
             audioSource.pitch = Mathf.Clamp(0.9f + (col.relativeVelocity.magnitude/maxVelocity), 0f, 1f);
             audioSource.Play(0);
             
-            /*Vector2 angle = -col.contacts[0].normal;
-            Vector2 velocity = col.relativeVelocity;
-
-            float impactForce = velocity.magnitude * forceFactor;
-
-            //Debug.Log("Puck hit with angle " + angle + "\nAnd with speed " + impactForce);
-            thisBody.AddForce(impactForce * angle, ForceMode2D.Impulse);*/
-
             if (col.gameObject == lastHit)
             {
                 if (!onCooldown)
